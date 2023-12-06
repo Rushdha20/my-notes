@@ -11,6 +11,13 @@ import { HeaderComponent } from "./header/header.component";
     imports: [CommonModule, RouterOutlet, HeaderComponent]
 })
 export class AppComponent {
-  title = 'my-notes';
-name: any;
+  notes: string[] = ['Note 1', 'Note 2', 'Note 3'];
+  newNote: string = '';
+
+  addNote() {
+    if (this.newNote.trim() !== '') {
+      this.notes.push(this.newNote);
+      this.newNote = '';
+    }
+  }
 }

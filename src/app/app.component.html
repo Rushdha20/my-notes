@@ -1,2 +1,14 @@
-<app-header></app-header>
-<h1>Hello Rushdha!</h1>
+<div class="app-container">
+  <h1>My Notes App</h1>
+
+  <div class="notes-container">
+    <div *ngFor="let note of notes" class="note">
+      {{ note }}
+    </div>
+  </div>
+
+  <div class="add-note-container">
+    <input [(ngModel)]="newNote" placeholder="Add a new note" />
+    <button (click)="addNote()">Add Note</button>
+  </div>
+</div>
